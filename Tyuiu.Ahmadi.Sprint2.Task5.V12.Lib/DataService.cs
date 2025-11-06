@@ -41,11 +41,27 @@ namespace Tyuiu.Ahmadi.Sprint2.Task5.V12.Lib
                         break;
                 }
             }
+            string res1 = Convert.ToString(prevDay);
+            string res2 = Convert.ToString(prevMonth);
+            string res3 = Convert.ToString(prevYear);
+            if (prevDay < 10 && prevMonth >= 10)
+            {
+                return "0" + res1 + "." + res2 +"."+res3;
+            }
+            else if (prevMonth < 10 && prevDay >= 10)
+            {
+                return res1 + "." + "0" + res2 +"."+ res3;
+            }
+            else if (prevMonth < 10 && prevDay < 10)
+            {
+                return "0" + res1 + "." + "0" + res2+"."+ res3;
+            }
+            else
+                return res1 + "." + res2 + "."+res3;
+            
 
-            string a = $"{prevDay}.{prevMonth}.{prevYear}";
 
-
-            return (a);
+            
         }
     }
 }
